@@ -1,0 +1,64 @@
+:root {
+  --ink: #14201c;
+  --ink-soft: #2c3d36;
+  --fog: #e7f0eb;
+  --mist: rgba(231, 240, 235, 0.72);
+  --pine: #1f4d3a;
+  --pine-deep: #0f2e24;
+  --moss: #3f7a5c;
+  --copper: #c46b3a;
+  --copper-soft: #e8a07a;
+  --cream: #f3f7f4;
+  --line: rgba(20, 32, 28, 0.12);
+  --shadow: 0 24px 60px rgba(15, 46, 36, 0.18);
+  --radius: 18px;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-outfit), "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  color: var(--ink);
+  font-family: var(--font-outfit), "Segoe UI", sans-serif;
+  background:
+    radial-gradient(1200px 700px at 10% -10%, rgba(196, 107, 58, 0.22), transparent 55%),
+    radial-gradient(900px 600px at 90% 0%, rgba(63, 122, 92, 0.28), transparent 50%),
+    linear-gradient(160deg, #dce8e1 0%, #f3f7f4 42%, #d5e4dc 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(20, 32, 28, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 32, 28, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at 50% 20%, black, transparent 75%);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(196, 107, 58, 0.28);
+}
