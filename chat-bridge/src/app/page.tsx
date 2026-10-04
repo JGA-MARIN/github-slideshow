@@ -122,7 +122,9 @@ export default function Home() {
               status?.openaiConfigured ? styles.chipOk : styles.chipWarn
             }`}
           >
-            {status?.openaiConfigured ? `ChatGPT · ${status.model}` : "ChatGPT saknar API-nyckel"}
+            {status?.openaiConfigured
+              ? `ChatGPT · ${status.model}`
+              : "ChatGPT · demoläge (saknar API-nyckel)"}
           </span>
           <span
             className={`${styles.chip} ${

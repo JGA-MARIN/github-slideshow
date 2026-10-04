@@ -11,6 +11,7 @@ På iPhone syns samma mejl och händelser via **iCloud** när du använder samma
 - Listar och skapar händelser i **Kalender.app** via AppleScript
 - Listar, läser och skickar mejl i **Mail.app** via AppleScript
 - Faller tillbaka till **demoläge** automatiskt utanför macOS
+- Utan `OPENAI_API_KEY` finns ett enkelt demoläge för kalender/mejl-frågor (full ChatGPT-styrning kräver nyckel)
 
 ## Kom igång (på din Mac)
 

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { runDemoChat } from "@/lib/demo-chat";
 import { executeTool, systemPrompt, toolDefinitions } from "@/lib/tools";
 
 export const runtime = "nodejs";
@@ -11,20 +12,17 @@ type ClientMessage = {
 
 export async function POST(request: Request) {
   try {
-    if (!process.env.OPENAI_API_KEY) {
-      return NextResponse.json(
-        {
-          error:
-            "OPENAI_API_KEY saknas. Lägg nyckeln i chat-bridge/.env.local och starta om servern.",
-        },
-        { status: 400 },
-      );
-    }
-
     const body = (await request.json()) as { messages?: ClientMessage[] };
     const messages = body.messages || [];
     if (!messages.length) {
       return NextResponse.json({ error: "Inga meddelanden skickades." }, { status: 400 });
+    }
+
+    const lastUser = [...messages].reverse().find((m) => m.role === "user");
+
+    if (!process.env.OPENAI_API_KEY) {
+      const demo = await runDemoChat(lastUser?.content || "");
+      return NextResponse.json(demo);
     }
 
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
