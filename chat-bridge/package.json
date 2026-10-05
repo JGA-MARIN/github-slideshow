@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pkg:macos": "bash scripts/build-macos-pkg.sh"
   },
   "dependencies": {
     "next": "15.5.27",

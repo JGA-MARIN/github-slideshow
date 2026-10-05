@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "Brygga installerades i /Applications."
+echo "Starta Brygga från Launchpad eller Program-mappen."
+echo "Ge Automatisering-behörighet till Mail och Kalender vid första användning."
+
+exit 0

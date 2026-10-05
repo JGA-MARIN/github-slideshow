@@ -13,7 +13,24 @@ På iPhone syns samma mejl och händelser via **iCloud** när du använder samma
 - Faller tillbaka till **demoläge** automatiskt utanför macOS
 - Utan `OPENAI_API_KEY` finns ett enkelt demoläge för kalender/mejl-frågor (full ChatGPT-styrning kräver nyckel)
 
-## Kom igång (på din Mac)
+## Installera med .pkg (rekommenderat på Mac)
+
+1. Ladda ner `Brygga-0.1.0.pkg`
+2. Dubbelklicka för att installera (läggs i **Program**)
+3. Om macOS varnar för osignerad app: högerklicka → **Öppna**
+4. Starta **Brygga**, ange OpenAI-nyckel (eller hoppa över för demoläge)
+5. Ge **Automatisering**-behörighet till Mail och Kalender när macOS frågar
+
+Bygg paketet själv:
+
+```bash
+cd chat-bridge
+npm run pkg:macos
+# → dist/Brygga-0.1.0.pkg
+# Intel Mac: INCLUDE_INTEL=1 npm run pkg:macos
+```
+
+## Kom igång (utveckling på Mac)
 
 ```bash
 cd chat-bridge
